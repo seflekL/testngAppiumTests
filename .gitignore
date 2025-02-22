@@ -1,0 +1,28 @@
+# IDE Config Files
+.idea/
+.vscode/
+
+# Build Artifacts
+target/
+build/
+*.class
+
+# Logs and Reports
+logs/
+allure-results/
+test-output/
+
+# APKs, App Files
+Apps/
+*.apk
+*.aab
+
+# Config & Secrets
+config/
+configuration.properties
+.env
+secrets.json
+
+# OS and Dependency Files
+.DS_Store
+node_modules/

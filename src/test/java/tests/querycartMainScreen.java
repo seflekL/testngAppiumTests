@@ -9,9 +9,11 @@ import org.openqa.selenium.interactions.PointerInput;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.QueryCartPage;
+import utils.ConfigReader;
 import utils.Driver;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+import utils.QueryCartMethod;
 import utils.ReusableMethods;
 
 
@@ -40,18 +42,68 @@ public class querycartMainScreen {
 
 
     }
+
     @Description("MainScreenBanner Test")
     @Test
     public void MainScreenBannerTest() {
-       logger.info("Uygulama Baslatilir");
-       Driver.getAndroidDriver();
+        logger.info("Uygulama Baslatilir");
+        Driver.getAndroidDriver();
         queryCartPage.notificationPopUpClick.click();
         logger.info("BannerSwipe Baslatilir");
-        Actions action= new Actions(driver);
+        Actions action = new Actions(driver);
         ReusableMethods.waitFor(5);
-         ReusableMethods.swipeBannerElementOnly(driver,queryCartPage.mainscrenBannerElementi,3);
+        ReusableMethods.swipeBannerElementOnly(driver, queryCartPage.mainscrenBannerElementi, 3);
 
         driver.quit();
-     }
+    }
+
+    @Description("Floating Action  Buttonlarinin dogru sayflara yonledirme testi")
+    @Test
+    public void MainScreenCategoryButtonTets() {
+        logger.info("CategoryButton Testi");
+        Driver.getAndroidDriver();
+        queryCartPage.notificationPopUpClick.click();
+        queryCartPage.categoryButtonElementi.click();
+        Assert.assertTrue(queryCartPage.categoryMenElementButton.isDisplayed());
+    }
+
+    @Description("Floating Action  Buttonlarinin dogru sayflara yonledirme testi")
+    @Test
+    public void MainScreenCartButtonTets() {
+        logger.info("CartButton Testi");
+        Driver.getAndroidDriver();
+        ReusableMethods.waitForVisibility(queryCartPage.notificationPopUpClick,10);
+        queryCartPage.notificationPopUpClick.click();
+        ReusableMethods.wait(3);
+        queryCartPage.cartButtonElementi.click();
+         Assert.assertTrue(queryCartPage.shoppingCartTextElementi.isDisplayed());
+    }
+    @Description("Floating Action  Buttonlarinin dogru sayflara yonledirme testi")
+    @Test
+    public void MainScreenWishlistButtonTets() {
+        logger.info("WishListButton Testi");
+        Driver.getAndroidDriver();
+        ReusableMethods.waitForVisibility(queryCartPage.notificationPopUpClick,10);
+        queryCartPage.notificationPopUpClick.click();
+        ReusableMethods.wait(2);
+        queryCartPage.whishListButtonElmenti.click();
+        QueryCartMethod.autoLogin();
+        ReusableMethods.wait(2);
+        queryCartPage.whishListButtonElmenti.click();
+        Assert.assertTrue(queryCartPage.whishlistTextElementi.isDisplayed());
+    }
+
+    @Description("Floating Action  Buttonlarinin dogru sayflara yonledirme testi")
+    @Test
+    public void MainScreenProfileButtonTest() {
+        logger.info("ProfileButton Testi");
+        Driver.getAndroidDriver();
+        ReusableMethods.waitForVisibility(queryCartPage.notificationPopUpClick,10);
+        queryCartPage.notificationPopUpClick.click();
+        queryCartPage.profileButtonElementi.click();
+        Assert.assertTrue(queryCartPage.profileSigntoSeeYourInfoTextElmenti.isDisplayed());
+
+    }
+
 
 }

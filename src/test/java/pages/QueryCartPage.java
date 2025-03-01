@@ -36,7 +36,26 @@ public class QueryCartPage {
     @AndroidFindBy (uiAutomator = "new UiSelector().className(\"android.view.View\").instance(7)")
     public WebElement mainscrenBannerElementi;
 
+    @AndroidFindBy (uiAutomator = "new UiSelector().description(\"Men\")")
+    public  WebElement categoryMenElementButton;
 
+    @AndroidFindBy (uiAutomator = "new UiSelector().description(\"Shopping Cart\")")
+    public WebElement shoppingCartTextElementi;
+
+    @AndroidFindBy (uiAutomator = "new UiSelector().description(\"*Use Email Instead\")")
+    public WebElement signINUseEmailInsteadButtonElementi;
+
+    @AndroidFindBy (uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(0)")
+    public WebElement signInEmailBoxElementi;
+
+    @AndroidFindBy (uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(1)")
+    public WebElement signInPasswordBoxElementi;
+    @AndroidFindBy (uiAutomator = "new UiSelector().description(\"Sign In\").instance(1)")
+    public WebElement signInContinueButtonElementi;
+    @AndroidFindBy (uiAutomator = "new UiSelector().description(\"Wishlist\")")
+    public WebElement whishlistTextElementi;
+    @AndroidFindBy (uiAutomator = "new UiSelector().description(\"Sing In To See Your Info\")")
+    public WebElement profileSigntoSeeYourInfoTextElmenti;
 
     }
 

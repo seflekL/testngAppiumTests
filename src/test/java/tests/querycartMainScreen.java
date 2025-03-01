@@ -59,7 +59,7 @@ public class querycartMainScreen {
 
     @Description("Floating Action  Buttonlarinin dogru sayflara yonledirme testi")
     @Test
-    public void MainScreenCategoryButtonTets() {
+    public void MainScreenCategoryButtonTest() {
         logger.info("CategoryButton Testi");
         Driver.getAndroidDriver();
         queryCartPage.notificationPopUpClick.click();
@@ -69,7 +69,7 @@ public class querycartMainScreen {
 
     @Description("Floating Action  Buttonlarinin dogru sayflara yonledirme testi")
     @Test
-    public void MainScreenCartButtonTets() {
+    public void MainScreenCartButtonTest() {
         logger.info("CartButton Testi");
         Driver.getAndroidDriver();
         ReusableMethods.waitForVisibility(queryCartPage.notificationPopUpClick,10);
@@ -80,7 +80,7 @@ public class querycartMainScreen {
     }
     @Description("Floating Action  Buttonlarinin dogru sayflara yonledirme testi")
     @Test
-    public void MainScreenWishlistButtonTets() {
+    public void MainScreenWishlistButtonTest() {
         logger.info("WishListButton Testi");
         Driver.getAndroidDriver();
         ReusableMethods.waitForVisibility(queryCartPage.notificationPopUpClick,10);
